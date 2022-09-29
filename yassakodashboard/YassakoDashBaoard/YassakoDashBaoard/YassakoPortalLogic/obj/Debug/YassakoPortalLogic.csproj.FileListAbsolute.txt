@@ -1,0 +1,27 @@
+D:\Yassako\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll.config
+D:\Yassako\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll
+D:\Yassako\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.pdb
+D:\Yassako\YassakoPortalLogic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Yassako\YassakoPortalLogic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Yassako\YassakoPortalLogic\bin\Debug\Microsoft.Practices.ObjectBuilder.dll
+D:\Yassako\YassakoPortalLogic\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\Yassako\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.CoreCompileInputs.cache
+D:\Yassako\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.CopyComplete
+D:\Yassako\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.dll
+D:\Yassako\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.pdb
+D:\Yassako\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csprojAssemblyReference.cache
+D:\Projects\Live\DashBoards\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll.config
+D:\Projects\Live\DashBoards\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll
+D:\Projects\Live\DashBoards\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.pdb
+D:\Projects\Live\DashBoards\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.CopyComplete
+D:\Projects\Live\DashBoards\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.dll
+D:\Projects\Live\DashBoards\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.pdb
+D:\Projects\Live\DashBoards\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csprojAssemblyReference.cache
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll.config
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.pdb
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.CoreCompileInputs.cache
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.CopyComplete
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.dll
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.pdb
+D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.AssemblyReference.cache

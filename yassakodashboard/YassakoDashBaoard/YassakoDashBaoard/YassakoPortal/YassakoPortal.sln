@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YassakoPortal", "YassakoPortal.csproj", "{B56A2A54-0EE7-433E-9B5E-38B62F06782C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YassakoPortalLogic", "..\YassakoPortalLogic\YassakoPortalLogic.csproj", "{9C0FA591-713F-47EE-9571-42430FA46AAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B56A2A54-0EE7-433E-9B5E-38B62F06782C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56A2A54-0EE7-433E-9B5E-38B62F06782C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56A2A54-0EE7-433E-9B5E-38B62F06782C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56A2A54-0EE7-433E-9B5E-38B62F06782C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C0FA591-713F-47EE-9571-42430FA46AAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C0FA591-713F-47EE-9571-42430FA46AAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C0FA591-713F-47EE-9571-42430FA46AAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C0FA591-713F-47EE-9571-42430FA46AAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CB83F95-FDCD-4CF4-BFEF-68F5BD6AA306}
+	EndGlobalSection
+EndGlobal

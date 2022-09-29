@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://yassakoutilityapi/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://yassakoutilityapi/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://yassakoutilityapi/">
+      <s:element name="QueryCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:QueryCustomerDetailRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueryCustomerDetailRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Vendorcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="QueryCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QueryCustomerDetailsResult" type="tns:QueryCustomerDetailResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="QueryCustomerDetailResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Error">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="sn" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="meterType" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="meter" type="tns:Meter" />
+              <s:element minOccurs="0" maxOccurs="1" name="customer" type="tns:Customer" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Error">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMsg" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Meter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crton" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crtby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdfon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdfby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="msno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="assetno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="metertype_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="krn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ti" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sgc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="collectid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="deviceid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="loanLimit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastvending" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastfeevending" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="currentmonthunits" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="currentmonthmoney" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crton" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="crtby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdfon" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mdfby" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="identityid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="customertype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="mobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MaxAmountToBorrow" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustBalance" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MakeUtilityPayment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:PaymentRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaymentRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Credentials">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerName" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="CustomerTel" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="TranAmount" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="PaymentDate" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="Credentials">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="VendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="MakeUtilityPaymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MakeUtilityPaymentResult" type="tns:PaymentResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PaymentResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Error">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityRef" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Reason" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration1" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration2" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration3" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration4" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Narration5" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetTranStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="req" type="tns:GetTranStatusReq" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTranStatusReq">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Credentials">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="TranId" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetTranStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTranStatusResult" type="tns:GetTranStatusResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetTranStatusResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:PaymentResponse" />
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetUtilityBalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:CheckBalanceRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckBalanceRequest">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Credentials">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCode" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="GetUtilityBalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUtilityBalanceResult" type="tns:CheckBalanceResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CheckBalanceResponse">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:Error">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="UtilityCommBalance" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="Utility" type="s:string" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QueryCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:QueryCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="QueryCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:QueryCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MakeUtilityPaymentSoapIn">
+    <wsdl:part name="parameters" element="tns:MakeUtilityPayment" />
+  </wsdl:message>
+  <wsdl:message name="MakeUtilityPaymentSoapOut">
+    <wsdl:part name="parameters" element="tns:MakeUtilityPaymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTranStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTranStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTranStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTranStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUtilityBalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUtilityBalance" />
+  </wsdl:message>
+  <wsdl:message name="GetUtilityBalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUtilityBalanceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="YakakoUtilityApiSoap">
+    <wsdl:operation name="QueryCustomerDetails">
+      <wsdl:input message="tns:QueryCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:QueryCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MakeUtilityPayment">
+      <wsdl:input message="tns:MakeUtilityPaymentSoapIn" />
+      <wsdl:output message="tns:MakeUtilityPaymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranStatus">
+      <wsdl:input message="tns:GetTranStatusSoapIn" />
+      <wsdl:output message="tns:GetTranStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityBalance">
+      <wsdl:input message="tns:GetUtilityBalanceSoapIn" />
+      <wsdl:output message="tns:GetUtilityBalanceSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="YakakoUtilityApiSoap" type="tns:YakakoUtilityApiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QueryCustomerDetails">
+      <soap:operation soapAction="http://yassakoutilityapi/QueryCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeUtilityPayment">
+      <soap:operation soapAction="http://yassakoutilityapi/MakeUtilityPayment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranStatus">
+      <soap:operation soapAction="http://yassakoutilityapi/GetTranStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityBalance">
+      <soap:operation soapAction="http://yassakoutilityapi/GetUtilityBalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="YakakoUtilityApiSoap12" type="tns:YakakoUtilityApiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QueryCustomerDetails">
+      <soap12:operation soapAction="http://yassakoutilityapi/QueryCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MakeUtilityPayment">
+      <soap12:operation soapAction="http://yassakoutilityapi/MakeUtilityPayment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranStatus">
+      <soap12:operation soapAction="http://yassakoutilityapi/GetTranStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUtilityBalance">
+      <soap12:operation soapAction="http://yassakoutilityapi/GetUtilityBalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="YakakoUtilityApi">
+    <wsdl:port name="YakakoUtilityApiSoap" binding="tns:YakakoUtilityApiSoap">
+      <soap:address location="http://localhost:8017/YakakoUtilityApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="YakakoUtilityApiSoap12" binding="tns:YakakoUtilityApiSoap12">
+      <soap12:address location="http://localhost:8017/YakakoUtilityApi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
