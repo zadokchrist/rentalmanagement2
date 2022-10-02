@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "ViewProperties";
+    Layout = "~/Views/Shared/_LayoutPagineted.cshtml";
+}
+
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Property Report</h3>
+        </div>
+
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-secondary" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Settings 1</a>
+                                <a class="dropdown-item" href="#">Settings 2</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <div class="col-sm-9">
+                        <a href="~/Property/AddProperty?LandloadId=@ViewBag.Landlordid&view=2" class="btn btn-primary"> Add Property</a>
+                    </div>
+                    <h6 class="bg-green text-center">@ViewBag.Message</h6>
+                    <h6 class="bg-red text-center">@ViewBag.Error</h6>
+                    <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Property id</th>
+                                <th>LandLordId</th>
+                                <th>Property Reference</th>
+                                <th>Longtitude</th>
+                                <th>Latitude</th>
+                                <th>Date Created</th>
+                                <th>Status</th>
+                                <th>RentValue</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (ViewBag.Properties != null)
+                            {
+                                foreach (var property in ViewBag.Properties)
+                                {
+                            <tr>
+                                <td>@property.PropertyId</td>
+                                <td>@property.LandLordId</td>
+                                <td>@property.PRN</td>
+                                <td>@property.Longtitude</td>
+                                <td>@property.Latitude</td>
+                                <td>
+                                    @property.CreationDate
+                                </td>
+                                <td>
+                                    @property.Status
+                                </td>
+                                <td>
+                                    @property.RentValue
+                                </td>
+                                <td>
+                                    <a href="~/Property/AddTenant?propertyId=@property.PropertyId">Add Tenant</a>
+                                </td>
+                            </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

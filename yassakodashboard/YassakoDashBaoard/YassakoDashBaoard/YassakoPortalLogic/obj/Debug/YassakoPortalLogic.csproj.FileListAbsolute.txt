@@ -25,3 +25,11 @@ D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoar
 D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.dll
 D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.pdb
 D:\working directory\khp_project\frontendfinal\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.AssemblyReference.cache
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll.config
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.dll
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\bin\Debug\YassakoPortalLogic.pdb
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.CoreCompileInputs.cache
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.CopyComplete
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.dll
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.pdb
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortalLogic\obj\Debug\YassakoPortalLogic.csproj.AssemblyReference.cache

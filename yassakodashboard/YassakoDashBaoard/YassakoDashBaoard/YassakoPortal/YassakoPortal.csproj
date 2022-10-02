@@ -2063,7 +2063,6 @@
     <Content Include="content\vendors\Flot\examples\series-toggle\index.html" />
     <Content Include="content\vendors\Flot\examples\series-types\index.html" />
     <Content Include="content\vendors\Flot\examples\shared\jquery-ui\jquery-ui.min.css" />
-    <Content Include="content\vendors\Flot\examples\shared\jquery-ui\jquery-ui.min.js" />
     <Content Include="content\vendors\Flot\examples\stacking\index.html" />
     <Content Include="content\vendors\Flot\examples\symbols\index.html" />
     <Content Include="content\vendors\Flot\examples\threshold\index.html" />
@@ -3804,7 +3803,6 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -4899,6 +4897,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Properties\PublishProfiles\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="content\vendors\devbridge-autocomplete\src\jquery.autocomplete.d.ts" />
