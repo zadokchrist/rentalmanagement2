@@ -14,6 +14,8 @@ namespace YassakoPortalLogic.Models
         public string Paymentdate { get; set; }
         public string Paymentmode { get; set; }
         public string PropertyId { get; set; }
+        public string TenantId { get; set; }
+        public string CreationDate { get; set; }
 
     }
 }

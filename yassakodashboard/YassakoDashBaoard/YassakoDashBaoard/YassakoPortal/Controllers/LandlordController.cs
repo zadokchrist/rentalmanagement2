@@ -70,5 +70,26 @@ namespace YassakoPortal.Controllers
             }
             return View();
         }
+
+        public ActionResult ViewTenants()
+        {
+            try
+            {
+                response = processor.GetTenants();
+                if (response.IsSuccessfull)
+                {
+                    ViewBag.Tenants = response.list;
+                }
+                else
+                {
+                    ViewBag.Error = response.Message;
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View();
+        }
     }
 }

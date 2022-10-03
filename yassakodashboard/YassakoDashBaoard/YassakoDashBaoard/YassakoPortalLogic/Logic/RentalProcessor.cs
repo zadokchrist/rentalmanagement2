@@ -14,10 +14,15 @@ namespace YassakoPortalLogic.Logic
         LandLord landlord;
         DataTable table;
         EmailProcessor sendEmail = new EmailProcessor();
+        GenericResponse response;
+        List<Object> objects = new List<Object>();
+        public RentalProcessor() 
+        {
+            response = new GenericResponse();
+        }
 
         public GenericResponse GetLandlords()
         {
-            GenericResponse response = new GenericResponse();
             try
             {
                 table = dh.GetLandLords();
@@ -53,9 +58,42 @@ namespace YassakoPortalLogic.Logic
             return response;
         }
 
+        public GenericResponse GetTenantsById(string tenantid)
+        {
+            try
+            {
+                table = dh.GetTenantsById(tenantid);
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        Tenant tenant = new Tenant();
+                        tenant.TenantId = dr["TenantId"].ToString();
+                        tenant.TenantName = dr["TenantName"].ToString();
+                        tenant.Telnumber = dr["Telnumber"].ToString();
+                        tenant.CreationDate = dr["CreationDate"].ToString();
+                        tenant.PropertyId = dr["PropertyId"].ToString();
+                        objects.Add(tenant);
+                    }
+                    response.IsSuccessfull = true;
+                    response.list = objects;
+                }
+                else
+                {
+                    response.IsSuccessfull = false;
+                    response.Message = "NO TENANTS AVAILABLE";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
         public GenericResponse AddLandLord(LandLord landLord)
         {
-            GenericResponse response = new GenericResponse();
             try
             {
                 dh.AddLandlord(landLord.name, landLord.email, landLord.tel);
@@ -72,7 +110,6 @@ namespace YassakoPortalLogic.Logic
 
         public GenericResponse AddProperty(Property property)
         {
-            GenericResponse response = new GenericResponse();
             try
             {
                 dh.AddProperty(property.LandLordId, property.PRN, property.PropertyLoc, property.Longtitude, property.Latitude, property.TotalRooms,property.RentValue);
@@ -89,7 +126,6 @@ namespace YassakoPortalLogic.Logic
 
         public GenericResponse GetProperties(Property property)
         {
-            GenericResponse response = new GenericResponse();
             try
             {
                 table = dh.GetProperties(property.LandLordId);
@@ -130,12 +166,96 @@ namespace YassakoPortalLogic.Logic
 
         public GenericResponse AddTenant(Tenant tenant) 
         {
-            GenericResponse response = new GenericResponse();
             try
             {
                 dh.AddTenant(tenant.TenantName,tenant.Telnumber,tenant.Deposit,tenant.Paymentdate,tenant.Paymentmode,tenant.PropertyId);
                 response.IsSuccessfull = true;
                 response.Message = "TENANT ADDED SUCCESSFULLY";
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        public GenericResponse GetTenants() 
+        {
+            try
+            {
+                table = dh.GetTenants();
+                if (table.Rows.Count>0)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        Tenant tenant = new Tenant();
+                        tenant.TenantId = dr["TenantId"].ToString();
+                        tenant.TenantName = dr["TenantName"].ToString();
+                        tenant.Telnumber = dr["Telnumber"].ToString();
+                        tenant.CreationDate = dr["CreationDate"].ToString();
+                        tenant.PropertyId = dr["PropertyId"].ToString();
+                        objects.Add(tenant);
+                    }
+                    response.IsSuccessfull = true;
+                    response.list = objects;
+                }
+                else
+                {
+                    response.IsSuccessfull = false;
+                    response.Message = "NO TENANTS AVAILABLE";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        public GenericResponse AddTenantPayment(TenantPayment payment) 
+        {
+            try
+            {
+                dh.AddTenantPayment(payment.PropertyRef, payment.Amount, payment.DatePaid, payment.PaymentMode, payment.RecordedBy, payment.ReceiptNumber);
+                response.IsSuccessfull = true;
+                response.Message = "PAYMENT RECORDED SUCCESSFULLY";
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+
+            return response;
+        }
+
+        public GenericResponse GetTenantPayments() 
+        {
+            try
+            {
+                table = dh.GetTenantPayments();
+                if (table.Rows.Count>0)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        TenantPayment payment = new TenantPayment();
+                        payment.Amount = dr["Amount"].ToString();
+                        payment.DatePaid = dr["DatePaid"].ToString();
+                        payment.PaymentMode = dr["PaymentMode"].ToString();
+                        payment.PropertyRef = dr["PropertyRef"].ToString();
+                        payment.ReceiptNumber = dr["ReceiptNumber"].ToString();
+                        payment.RecordDate = dr["RecordDate"].ToString();
+                        payment.RecordedBy = dr["RecordedBy"].ToString();
+                        payment.KhpComm = (double.Parse(payment.Amount) * 0.1).ToString();
+                        payment.LandLordCommission = (double.Parse(payment.Amount) - double.Parse(payment.KhpComm)).ToString();
+                        objects.Add(payment);
+                    }
+                    response.list = objects;
+                    response.IsSuccessfull = true;
+                    response.Message = "SUCCESSFUL";
+                }
             }
             catch (Exception ex)
             {

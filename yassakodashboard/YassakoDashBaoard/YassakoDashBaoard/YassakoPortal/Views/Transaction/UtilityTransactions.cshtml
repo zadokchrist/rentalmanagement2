@@ -7,7 +7,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>Utility Transaction Report</h3>
+                <h3>Tenant Transaction Report</h3>
             </div>
 
             <div class="title_right">
@@ -52,36 +52,32 @@
                         <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>Vendor Tran Id</th>
-                                    <th>Yassako Ref</th>
-                                    <th>Phone Number</th>
-                                    <th>Meter No</th>
+                                    <th>TRN</th>
                                     <th>Amount</th>
-                                    <th>Vendor</th>
-                                    <th>Utility</th>
-                                    <th>Utility Ref</th>
-                                    <th>Tran Date</th>
-                                    <th>Status</th>
-                                    <th>Reason</th>
+                                    <th>Khp Commision</th>
+                                    <th>LandLord Amount</th>
+                                    <th>Date Paid</th>
+                                    <th>Payment Mode</th>
+                                    <th>RecordDate</th>
+                                    <th>Recorded By</th>
+                                    <th>Receipt Number</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @if (ViewBag.Transactions != null)
+                                @if (ViewBag.PaymentTransactions != null)
                                 {
-                                    foreach (var tran in ViewBag.Transactions)
+                                    foreach (var tran in ViewBag.PaymentTransactions)
                                     {
                                 <tr class="even pointer">
-                                    <td class=" ">@tran.VendorId</td>
-                                    <td class=" ">@tran.Yassakoid</td>
-                                    <td class=" ">@tran.CustPhone</td>
-                                    <td class=" ">@tran.MeterNumber</td>
-                                    <td class=" ">@tran.TranAmount</td>
-                                    <td class=" ">@tran.Vendor</td>
-                                    <td class=" ">@tran.Utility</td>
-                                    <td class=" ">@tran.UtilityToken</td>
-                                    <td class=" ">@tran.PaymentDate</td>
-                                    <td class=" ">@tran.TranStatus</td>
-                                    <td class=" ">@tran.Reason</td>
+                                    <td class=" ">@tran.PropertyRef</td>
+                                    <td class=" ">@tran.Amount</td>
+                                    <td class=" ">@tran.KhpComm</td>
+                                    <td class=" ">@tran.LandLordCommission</td>
+                                    <td class=" ">@tran.DatePaid</td>
+                                    <td class=" ">@tran.PaymentMode</td>
+                                    <td class=" ">@tran.RecordDate</td>
+                                    <td class=" ">@tran.RecordedBy</td>
+                                    <td class=" ">@tran.ReceiptNumber</td>
                                 </tr>
                                     }
                                 }

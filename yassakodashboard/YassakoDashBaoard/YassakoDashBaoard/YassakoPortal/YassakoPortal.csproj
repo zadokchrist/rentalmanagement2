@@ -4887,6 +4887,7 @@
     <Content Include="Views\Property\AddProperty.cshtml" />
     <Content Include="Views\Property\ViewProperties.cshtml" />
     <Content Include="Views\Property\AddTenant.cshtml" />
+    <Content Include="Views\Landlord\ViewTenants.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

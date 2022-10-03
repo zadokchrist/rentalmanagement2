@@ -73,6 +73,7 @@
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\SystemUser.cs" />
     <Compile Include="Models\Tenant.cs" />
+    <Compile Include="Models\TenantPayment.cs" />
     <Compile Include="Models\TransactionSearchResponse.cs" />
     <Compile Include="Models\UserDepartments.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

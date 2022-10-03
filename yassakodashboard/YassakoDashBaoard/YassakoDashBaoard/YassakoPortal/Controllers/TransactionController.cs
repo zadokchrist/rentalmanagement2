@@ -8,33 +8,60 @@ namespace YassakoPortal.Controllers
 {
     public class TransactionController : Controller
     {
+        YassakoPortalLogic.Models.GenericResponse response = new YassakoPortalLogic.Models.GenericResponse();
+        YassakoPortalLogic.Models.Property property = new YassakoPortalLogic.Models.Property();
+        YassakoPortalLogic.Logic.RentalProcessor processor = new YassakoPortalLogic.Logic.RentalProcessor();
         // GET: Transaction
-        public ActionResult Index()
+        public ActionResult Index(string tenantid)
         {
             try
             {
-                YassakoPortalLogic.Models.Transaction transaction = new YassakoPortalLogic.Models.Transaction();
-                transaction.RequestedBy = Session["Uname"].ToString();
-                transaction.FromDate = "2020-01-01";
-                transaction.ToDate = DateTime.Now.ToString("yyyy-MM-dd");
-                if (Session["Utype"].ToString().ToUpper().Equals("YASSAKO"))
+                response = processor.GetTenantsById(tenantid);
+                if (response.IsSuccessfull)
                 {
-                    transaction.Vendor = "ALL";
+                    ViewBag.Tenant = response.list;
                 }
                 else
                 {
-                    transaction.Vendor = Session["Utype"].ToString().ToUpper();
+                    ViewBag.Error = response.Message;
                 }
-                YassakoPortalLogic.Logic.TransactionProcessor tranprocessor = new YassakoPortalLogic.Logic.TransactionProcessor(transaction);
-                YassakoPortalLogic.Models.TransactionSearchResponse searchResult = new YassakoPortalLogic.Models.TransactionSearchResponse();
-                searchResult = tranprocessor.SearchTransaction();
-                if (searchResult.IsSuccessfull)
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(FormCollection collection,string tenantid)
+        {
+            try
+            {
+                YassakoPortalLogic.Models.TenantPayment payment = new YassakoPortalLogic.Models.TenantPayment();
+                payment.PropertyRef = tenantid;
+                payment.Amount = Request["deposit"];
+                payment.DatePaid = Request["paymentdate"];
+                payment.PaymentMode = Request["paymentmode"];
+                payment.ReceiptNumber = Request["receiptnumber"];
+                payment.RecordedBy = Session["FullName"].ToString();
+                response = processor.AddTenantPayment(payment);
+                if (response.IsSuccessfull)
                 {
-                    ViewBag.Transactions = searchResult.transactions;
+                    response = processor.GetTenantsById(tenantid);
+                    if (response.IsSuccessfull)
+                    {
+                        ViewBag.Tenant = response.list;
+                    }
+                    else
+                    {
+                        ViewBag.Error = response.Message;
+                    }
+                    ViewBag.Message = response.Message;
                 }
                 else
                 {
-                    ViewBag.Message = searchResult.Message;
+                    ViewBag.Error = response.Message;
                 }
             }
             catch (Exception ex)
@@ -48,28 +75,15 @@ namespace YassakoPortal.Controllers
         {
             try
             {
-                YassakoPortalLogic.Models.Transaction transaction = new YassakoPortalLogic.Models.Transaction();
-                transaction.RequestedBy = Session["Uname"].ToString();
-                transaction.FromDate = "2020-01-01";
-                transaction.ToDate = DateTime.Now.ToString("yyyy-MM-dd");
-                if (Session["Utype"].ToString().ToUpper().Equals("YASSAKO"))
+                response = processor.GetTenantPayments();
+                if (response.IsSuccessfull)
                 {
-                    transaction.Vendor = "ALL";
+                    ViewBag.PaymentTransactions = response.list;
                 }
                 else
                 {
-                    transaction.Vendor = Session["Utype"].ToString().ToUpper();
-                }
-                YassakoPortalLogic.Logic.TransactionProcessor tranprocessor = new YassakoPortalLogic.Logic.TransactionProcessor(transaction);
-                YassakoPortalLogic.Models.TransactionSearchResponse searchResult = new YassakoPortalLogic.Models.TransactionSearchResponse();
-                searchResult = tranprocessor.UtilityTransaction();
-                if (searchResult.IsSuccessfull)
-                {
-                    ViewBag.Transactions = searchResult.transactions;
-                }
-                else
-                {
-                    ViewBag.Message = searchResult.Message;
+                    ViewBag.Error = response.Message;
+
                 }
             }
             catch (Exception ex)
