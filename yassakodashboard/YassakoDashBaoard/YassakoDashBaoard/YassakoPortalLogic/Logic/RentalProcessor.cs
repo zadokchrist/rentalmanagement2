@@ -264,5 +264,41 @@ namespace YassakoPortalLogic.Logic
             }
             return response;
         }
+
+        public GenericResponse SearchTenantPayments(TenantPayment pymt)
+        {
+            try
+            {
+                table = dh.SearchTenantPayments(pymt.LandLordid, pymt.DatePaid, pymt.RecordDate);
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        TenantPayment payment = new TenantPayment();
+                        payment.Amount = dr["Amount"].ToString();
+                        payment.DatePaid = dr["DatePaid"].ToString();
+                        payment.PaymentMode = dr["PaymentMode"].ToString();
+                        payment.PropertyRef = dr["PropertyRef"].ToString();
+                        payment.ReceiptNumber = dr["ReceiptNumber"].ToString();
+                        payment.RecordDate = dr["RecordDate"].ToString();
+                        payment.RecordedBy = dr["RecordedBy"].ToString();
+                        payment.KhpComm = (double.Parse(payment.Amount) * 0.1).ToString();
+                        payment.LandLordCommission = (double.Parse(payment.Amount) - double.Parse(payment.KhpComm)).ToString();
+                        objects.Add(payment);
+                    }
+
+                    
+                    response.list = objects;
+                    response.IsSuccessfull = true;
+                    response.Message = "SUCCESSFUL";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
     }
 }

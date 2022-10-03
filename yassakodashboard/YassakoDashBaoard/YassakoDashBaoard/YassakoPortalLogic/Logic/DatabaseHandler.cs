@@ -222,5 +222,12 @@ namespace YassakoPortalLogic.Logic
             returntable = DbConnection.ExecuteDataSet(command).Tables[0];
             return returntable;
         }
+
+        internal DataTable SearchTenantPayments(string landLordid, string datePaid, string recordDate)
+        {
+            command = DbConnection.GetStoredProcCommand("SearchTenantPayments", landLordid, datePaid, recordDate);
+            returntable = DbConnection.ExecuteDataSet(command).Tables[0];
+            return returntable;
+        }
     }
 }

@@ -17,5 +17,6 @@ namespace YassakoPortalLogic.Models
         public string RecordDate { get; set; }
         public string KhpComm { get; set; }
         public string LandLordCommission { get; set; }
+        public string LandLordid { get; set; }
     }
 }

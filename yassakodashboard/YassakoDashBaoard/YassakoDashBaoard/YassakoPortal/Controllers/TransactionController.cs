@@ -92,5 +92,32 @@ namespace YassakoPortal.Controllers
             }
             return View();
         }
+
+        [HttpPost]
+        public ActionResult UtilityTransactions(FormCollection form)
+        {
+            try
+            {
+                YassakoPortalLogic.Models.TenantPayment payment = new YassakoPortalLogic.Models.TenantPayment();
+                payment.LandLordid = Request["landlordid"];
+                payment.DatePaid = Request["fromdate"];
+                payment.RecordDate = Request["todate"];
+                response = processor.SearchTenantPayments(payment);
+                if (response.IsSuccessfull)
+                {
+                    ViewBag.PaymentTransactions = response.list;
+                }
+                else
+                {
+                    ViewBag.Error = response.Message;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View();
+        }
     }
 }
