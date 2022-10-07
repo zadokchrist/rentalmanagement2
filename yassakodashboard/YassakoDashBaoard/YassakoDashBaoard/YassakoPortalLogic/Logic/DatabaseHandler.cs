@@ -161,6 +161,14 @@ namespace YassakoPortalLogic.Logic
             return returntable;
         }
 
+        internal DataTable GetTenantsByLandLordId(string landlordid)
+        {
+            command = DbConnection.GetStoredProcCommand("GetTenantsByLandLordId",landlordid);
+            returntable = DbConnection.ExecuteDataSet(command).Tables[0];
+            return returntable;
+        }
+
+
         internal void LogAuditTrail(string userid, string action)
         {
             try
@@ -228,6 +236,19 @@ namespace YassakoPortalLogic.Logic
             command = DbConnection.GetStoredProcCommand("SearchTenantPayments", landLordid, datePaid, recordDate);
             returntable = DbConnection.ExecuteDataSet(command).Tables[0];
             return returntable;
+        }
+
+        internal DataTable GetTenantsByPropertyId(string propertyid)
+        {
+            command = DbConnection.GetStoredProcCommand("GetTenantsByPropertyId", propertyid);
+            returntable = DbConnection.ExecuteDataSet(command).Tables[0];
+            return returntable;
+        }
+
+        internal void RemoveTenantFromProperty(string propertyid,string reason)
+        {
+            command = DbConnection.GetStoredProcCommand("RemoveTenantFromProperty", propertyid,reason);
+            DbConnection.ExecuteNonQuery(command);
         }
     }
 }

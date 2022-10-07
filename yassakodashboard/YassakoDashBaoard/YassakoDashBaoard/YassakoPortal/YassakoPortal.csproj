@@ -4888,6 +4888,8 @@
     <Content Include="Views\Property\ViewProperties.cshtml" />
     <Content Include="Views\Property\AddTenant.cshtml" />
     <Content Include="Views\Landlord\ViewTenants.cshtml" />
+    <Content Include="Views\Landlord\ViewTenantsForLandlords.cshtml" />
+    <Content Include="Views\Property\RemoveTenant.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

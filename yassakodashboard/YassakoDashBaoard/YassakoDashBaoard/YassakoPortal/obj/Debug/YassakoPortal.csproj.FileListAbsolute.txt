@@ -282,7 +282,6 @@ D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\Ya
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\bin\System.Web.Helpers.xml
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\bin\System.Web.Mvc.xml
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.csproj.AssemblyReference.cache
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.csproj.CoreCompileInputs.cache
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.csproj.CopyComplete
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.dll

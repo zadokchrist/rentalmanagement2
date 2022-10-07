@@ -16,6 +16,7 @@ namespace YassakoPortalLogic.Models
         public string PropertyId { get; set; }
         public string TenantId { get; set; }
         public string CreationDate { get; set; }
+        public string ReasonForLeaving { get; set; }
 
     }
 }

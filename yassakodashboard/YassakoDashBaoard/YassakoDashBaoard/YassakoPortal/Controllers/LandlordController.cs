@@ -91,5 +91,26 @@ namespace YassakoPortal.Controllers
             }
             return View();
         }
+
+        public ActionResult ViewTenantsForLandlords(string landlordid) 
+        {
+            try
+            {
+                response = processor.GetTenantsByLandLordId(landlordid);
+                if (response.IsSuccessfull)
+                {
+                    ViewBag.Tenants = response.list;
+                }
+                else
+                {
+                    ViewBag.Error = response.Message;
+                }
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View();
+        }
     }
 }

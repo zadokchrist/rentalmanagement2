@@ -214,6 +214,40 @@ namespace YassakoPortalLogic.Logic
             return response;
         }
 
+        public GenericResponse GetTenantsByLandLordId(string landlordId) 
+        {
+            try
+            {
+                table = dh.GetTenantsByLandLordId(landlordId);
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        Tenant tenant = new Tenant();
+                        tenant.TenantId = dr["TenantId"].ToString();
+                        tenant.TenantName = dr["TenantName"].ToString();
+                        tenant.Telnumber = dr["Telnumber"].ToString();
+                        tenant.CreationDate = dr["CreationDate"].ToString();
+                        tenant.PropertyId = dr["PropertyId"].ToString();
+                        objects.Add(tenant);
+                    }
+                    response.IsSuccessfull = true;
+                    response.list = objects;
+                }
+                else
+                {
+                    response.IsSuccessfull = false;
+                    response.Message = "NO TENANTS AVAILABLE";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
         public GenericResponse AddTenantPayment(TenantPayment payment) 
         {
             try
@@ -298,6 +332,57 @@ namespace YassakoPortalLogic.Logic
                 response.IsSuccessfull = false;
                 response.Message = ex.Message;
             }
+            return response;
+        }
+
+        public GenericResponse GetTenantsByPropertyId(string propertyid) 
+        {
+            try
+            {
+                table = dh.GetTenantsByPropertyId(propertyid);
+                if (table.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in table.Rows)
+                    {
+                        Tenant tenant = new Tenant();
+                        tenant.TenantId = dr["TenantId"].ToString();
+                        tenant.TenantName = dr["TenantName"].ToString();
+                        tenant.Telnumber = dr["Telnumber"].ToString();
+                        tenant.CreationDate = dr["CreationDate"].ToString();
+                        tenant.PropertyId = dr["PropertyId"].ToString();
+                        objects.Add(tenant);
+                    }
+                    response.IsSuccessfull = true;
+                    response.list = objects;
+                }
+                else
+                {
+                    response.IsSuccessfull = false;
+                    response.Message = "NO TENANTS AVAILABLE";
+                }
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+            return response;
+        }
+
+        public GenericResponse RemoveTenantFromProperty(string propertyid, string reason) 
+        {
+            try
+            {
+                dh.RemoveTenantFromProperty(propertyid, reason);
+                response.IsSuccessfull = true;
+                response.Message = "TENANT REMOVED SUCCESSFUL";
+            }
+            catch (Exception ex)
+            {
+                response.IsSuccessfull = false;
+                response.Message = ex.Message;
+            }
+
             return response;
         }
     }

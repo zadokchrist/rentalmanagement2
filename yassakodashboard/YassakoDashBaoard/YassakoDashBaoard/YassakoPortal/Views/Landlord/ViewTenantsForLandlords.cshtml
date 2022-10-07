@@ -1,13 +1,12 @@
-﻿
-@{
-    ViewBag.Title = "ViewLandlords";
+﻿@{
+    ViewBag.Title = "View Tenants";
     Layout = "~/Views/Shared/_LayoutPagineted.cshtml";
 }
-
+}
 <div class="">
     <div class="page-title">
         <div class="title_left">
-            <h3>LandLord Report</h3>
+            <h3>Tenant Report</h3>
         </div>
 
         <div class="title_right">
@@ -52,50 +51,27 @@
                     <table id="datatable-buttons" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                             <tr>
-                                <th>LandLord id</th>
+                                <th>TRN</th>
                                 <th>Name</th>
-                                <th>Email</th>
                                 <th>Telephone</th>
-                                <th>Active</th>
                                 <th>Date Created</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @if (ViewBag.LandLords != null)
+                            @if (ViewBag.Tenants != null)
                             {
-                                foreach (var landlord in ViewBag.LandLords)
+                                foreach (var tenant in ViewBag.Tenants)
                                 {
                                     <tr>
-                                        <td>@landlord.id</td>
-                                        <td>@landlord.name</td>
-                                        <td>@landlord.email</td>
-                                        <td>@landlord.tel</td>
+                                        <td>@tenant.PropertyId</td>
+                                        <td>@tenant.TenantName</td>
+                                        <td>@tenant.Telnumber</td>
                                         <td>
-                                            @if (landlord.active)
-                                            {
-                                                <label class="badge badge-success">@landlord.active</label>
-                                            }
-                                            else if (!landlord.Active)
-                                            {
-                                                <label class="badge badge-danger">@landlord.active</label>
-                                            }
+                                            @tenant.CreationDate
                                         </td>
                                         <td>
-                                            @landlord.creationdate
-                                        </td>
-                                        <td>
-                                            @if (landlord.active)
-                                            {
-                                            <a href="~/User/DeactivateActivateResetUser?username=@landlord.id&activity=deactivate" class="btn btn-warning">Terminate Contract</a><br />
-                                                <a href="~/Property/ViewProperties?LandloadId=@landlord.id"  class="btn-sm btn-primary">View Properties</a>
-                                            }
-                                            else if (!landlord.active)
-                                            {
-                                                <button class="btn btn-outline-primary"><a href="~/User/DeactivateActivateResetUser?username=@landlord.id&activity=activate">Activate</a></button>
-                                            }
-                                            <a href="~/User/EditUser?username=@landlord.id" class="btn-sm btn-danger">Edit</a><br />
-                                            <a href="~/Landlord/ViewTenantsForLandlords?landlordid=@landlord.id" class="btn-sm btn-secondary">View Tenants</a>
+                                            <button class="btn btn-outline-primary"><a href="~/Transaction/Index?tenantid=@tenant.TenantId">Make Payment</a></button>
                                         </td>
                                     </tr>
                                 }
@@ -107,4 +83,3 @@
         </div>
     </div>
 </div>
-

@@ -87,7 +87,15 @@
                                     @property.RentValue
                                 </td>
                                 <td>
-                                    <a href="~/Property/AddTenant?propertyId=@property.PropertyId">Add Tenant</a>
+                                    @if (property.Status.Equals("OCCUPIED"))
+                                    {
+                                        <a href="~/Property/RemoveTenant?propertyId=@property.PropertyId">Remove Tenant</a>
+                                    }
+                                    else
+                                    {
+                                        <a href="~/Property/AddTenant?propertyId=@property.PropertyId">Add Tenant</a>
+                                    }
+
                                 </td>
                             </tr>
                                 }

@@ -135,5 +135,69 @@ namespace YassakoPortal.Controllers
 
             return View();
         }
+
+        public ActionResult RemoveTenant(string propertyid) 
+        {
+            if (Session["FullName"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                try
+                {
+                    response = processor.GetTenantsByPropertyId(propertyid);
+                    if (response.IsSuccessfull)
+                    {
+                        ViewBag.Tenants = response.list;
+                    }
+                    else
+                    {
+                        ViewBag.Error = response.Message;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Error = ex.Message;
+                }
+                return View();
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult RemoveTenant(FormCollection form,string propertyid)
+        {
+            if (Session["FullName"] == null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                try
+                {
+                    string reason = Request["reason"];
+                    string tenantid = Request["tenantid"];
+                    response = processor.RemoveTenantFromProperty(propertyid, reason);
+                    if (response.IsSuccessfull)
+                    {
+                        
+                        ViewBag.Message = response.Message;
+                        response = processor.GetTenantsById(tenantid);
+                        ViewBag.Tenants = response.list;
+                    }
+                    else
+                    {
+                        ViewBag.Error = response.Message;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ViewBag.Error = ex.Message;
+                }
+                return View();
+            }
+        }
     }
 }

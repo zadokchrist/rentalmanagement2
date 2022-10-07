@@ -87,14 +87,15 @@
                                         <td>
                                             @if (landlord.active)
                                             {
-                                                <button class="btn btn-outline-primary"><a href="~/User/DeactivateActivateResetUser?username=@landlord.id&activity=deactivate">Terminate Contract</a></button>
-                                                <button class="btn btn-outline-primary"><a href="~/Property/ViewProperties?LandloadId=@landlord.id">View Properties</a></button>
+                                            <a href="~/User/DeactivateActivateResetUser?username=@landlord.id&activity=deactivate" class="btn btn-warning">Terminate Contract</a><br />
+                                                <a href="~/Property/ViewProperties?LandloadId=@landlord.id"  class="btn-sm btn-primary">View Properties</a>
                                             }
                                             else if (!landlord.active)
                                             {
                                                 <button class="btn btn-outline-primary"><a href="~/User/DeactivateActivateResetUser?username=@landlord.id&activity=activate">Activate</a></button>
                                             }
-                                            <button class="btn btn-outline-primary"><a href="~/User/EditUser?username=@landlord.id">Edit</a></button>
+                                            <a href="~/User/EditUser?username=@landlord.id" class="btn-sm btn-danger">Edit</a><br />
+                                            <a href="~/Landlord/ViewTenantsForLandlords?landlordid=@landlord.id" class="btn-sm btn-secondary">View Tenants</a>
                                         </td>
                                     </tr>
                                 }
