@@ -286,3 +286,4 @@ D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\Ya
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.csproj.CopyComplete
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.dll
 D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.pdb
+D:\khp\rentalmanagement2\yassakodashboard\YassakoDashBaoard\YassakoDashBaoard\YassakoPortal\obj\Debug\YassakoPortal.csproj.AssemblyReference.cache
